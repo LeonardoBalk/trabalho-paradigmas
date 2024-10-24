@@ -40,3 +40,127 @@ No entanto, para resolver as questões, será usada apenas a biblioteca padrão.
 
 No entanto, para resolver as questões também será usada somente a biblioteca padrão.
 
+# Sintaxe
+
+## 1. Declaração de Funções
+**C**
+```c
+int soma(int a, int b) {
+    return a + b;
+}
+```
+**Haskell**
+```haskell
+soma :: Int -> Int -> Int
+soma a b = a + b
+```
+**Clojure**
+```clojure
+(defn soma [a b]
+  (+ a b))
+```
+Em C, as funções devem ter tipos definidos, enquanto Haskell e Clojure têm uma tipagem mais flexível, permitindo inferência de tipos.
+
+## 2. Entrada e Saída de Dados
+**C**
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Digite um número: ");
+    scanf("%d", &num);
+    printf("O dobro é: %d\n", num * 2);
+    return 0;
+}
+```
+**Haskell**
+```haskell
+main :: IO ()
+main = do
+  putStrLn "Digite um número:"
+  num <- readLn
+  putStrLn ("O dobro é: " ++ show (num * 2))
+```
+**Clojure**
+```clojure
+(defn main []
+  (println "Digite um número:")
+  (let [num (Integer/parseInt (read-line))]
+    (println "O dobro é:" (* num 2))))
+```
+C utiliza funções específicas como `printf` e `scanf` para entrada e saída, enquanto Haskell e Clojure usam uma abordagem mais declarativa.
+
+## 3. Manipulação de Listas
+**C**: 
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int soma = 0;
+    for (int i = 0; i < 5; i++) {
+        soma += arr[i];
+    }
+    printf("Soma: %d\n", soma);
+    return 0;
+}
+```
+**Haskell**: 
+```haskell
+main :: IO ()
+main = do
+  let arr = [1, 2, 3, 4, 5]
+  putStrLn ("Soma: " ++ show (sum arr))
+```
+**Clojure**: 
+```clojure
+(defn soma-lista [arr]
+  (reduce + arr))
+
+(defn main []
+  (println "Soma:" (soma-lista [1 2 3 4 5])))
+```
+C usa um loop explícito para somar elementos de um array, enquanto Haskell e Clojure oferecem funções de alto nível para manipulação de listas.
+
+## 4. Condicionais
+- **C**
+```c
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Digite um número: ");
+    scanf("%d", &num);
+    if (num % 2 == 0) {
+        printf("%d é par\n", num);
+    } else {
+        printf("%d é ímpar\n", num);
+    }
+    return 0;
+}
+```
+**Haskell**
+```haskell
+main :: IO ()
+main = do
+  putStrLn "Digite um número:"
+  num <- readLn
+  if even num
+    then putStrLn (show num ++ " é par")
+    else putStrLn (show num ++ " é ímpar")
+```
+**Clojure**
+```clojure
+(defn par-ou-impar [num]
+  (if (even? num)
+    (println num "é par")
+    (println num "é ímpar")))
+
+(defn main []
+  (println "Digite um número:")
+  (let [num (Integer/parseInt (read-line))]
+    (par-ou-impar num)))
+```
+A estrutura condicional é semelhante, mas Haskell e Clojure tendem a ser mais concisos, utilizando funções como `even?` para simplificar as condições.
+
