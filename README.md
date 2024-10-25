@@ -92,7 +92,7 @@ main = do
 C utiliza funções específicas como `printf` e `scanf` para entrada e saída, enquanto Haskell e Clojure usam uma abordagem mais declarativa.
 
 ## 3. Manipulação de Listas
-**C**: 
+**C**
 ```c
 #include <stdio.h>
 
@@ -106,7 +106,7 @@ int main() {
     return 0;
 }
 ```
-**Haskell**: 
+**Haskell**
 ```haskell
 main :: IO ()
 main = do
@@ -124,7 +124,7 @@ main = do
 C usa um loop explícito para somar elementos de um array, enquanto Haskell e Clojure oferecem funções de alto nível para manipulação de listas.
 
 ## 4. Condicionais
-- **C**
+**C**
 ```c
 #include <stdio.h>
 
@@ -164,3 +164,69 @@ main = do
 ```
 A estrutura condicional é semelhante, mas Haskell e Clojure tendem a ser mais concisos, utilizando funções como `even?` para simplificar as condições.
 
+## Laços
+**C**
+   ```c
+   for (int i = 0; i < n; i++) {
+       // Código a ser repetido
+   }
+   ```
+
+2. **`while`**: Usado quando o número de iterações não é conhecido, mas uma condição deve ser verdadeira.
+   ```c
+   while (condicao) {
+       // Código a ser repetido
+   }
+   ```
+
+3. **`do while`**: Semelhante ao `while`, mas garante que o bloco de código seja executado pelo menos uma vez.
+   ```c
+   do {
+       // Código a ser repetido
+   } while (condicao);
+   ```
+
+**Haskell**
+Haskell não possui estruturas de laço imperativas, pois é uma linguagem funcional. Em vez disso, pode-se usar recursão ou funções de ordem superior:
+
+1. **Recursão**: Uma função pode chamar a si mesma.
+   ```haskell
+   fatorial 0 = 1
+   fatorial n = n * fatorial (n - 1)
+   ```
+
+2. **`map`**: Aplica uma função a cada elemento de uma lista.
+   ```haskell
+   resultado = map (+1) [1, 2, 3]  -- [2, 3, 4]
+   ```
+
+3. **`fold`**: Reduz uma lista a um único valor usando uma função acumuladora.
+   ```haskell
+   soma = foldr (+) 0 [1, 2, 3]  -- 6
+   ```
+
+**Clojure**
+Clojure utiliza uma abordagem funcional, com os seguintes exemplos:
+
+1. **`loop/recur`**: Um laço que permite a iteração com recursão de cauda.
+   ```clojure
+   (defn fatorial [n]
+     (loop [acc 1, i n]
+       (if (zero? i)
+         acc
+         (recur (* acc i) (dec i)))))
+   ```
+
+2. **`map`**: Aplica uma função a cada elemento de uma coleção.
+   ```clojure
+   (map inc [1 2 3])  ;; (2 3 4)
+   ```
+
+3. **`reduce`**: Reduz uma coleção a um único valor usando uma função acumuladora.
+   ```clojure
+   (reduce + [1 2 3])  ;; 6
+   ```
+
+   Isso é, por enquanto o suficiente pra entender um pouco de cada linguagem, os termos novos ou que não estamos acostumados serão destacados nas questões.
+
+   
