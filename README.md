@@ -718,7 +718,7 @@ Ao longo da análise das implementações das funções em C, Haskell e Clojure,
 
 Ao considerar qual linguagem utilizar, é importante levar em conta não apenas a tarefa em si, mas também o contexto do projeto. Para aplicações que exigem um controle mais fino e eficiência, o C pode ser mais adequado. No entanto, se o objetivo é desenvolver algo rapidamente e que seja fácil de manter, Haskell e Clojure oferecem vantagens claras. A forma como essas linguagens lidam com a imutabilidade e as abstrações de alto nível realmente tornam a programação muito mais intuitiva.
 
-## Extra
+# Extra
 Esse trabalho foi realizado porque achei interessante aprender uma linguagem usado pelo banco Nubank, a linguagem Clojure tem uma forte ligação com o banco. Durante a realização do mesmo, estive pensando: **O Nubank poderia usar Haskell ao invés de Clojure?**
 
 Para responder essa pergunta precisamos saber como o Nubank utiliza a linguagem. Vamos lá!
