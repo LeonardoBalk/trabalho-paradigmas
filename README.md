@@ -687,6 +687,8 @@ calculadora x y op
 
  
 #### Clojure
+![{05196931-A68F-4D0A-96E9-DFCFA083B773}](https://github.com/user-attachments/assets/a6de897a-a7a6-4b2a-8994-f13f6487e092)<br>
+Por algum motivo o código náo carregou no github.
 
 
 -   **Diferenças:**
