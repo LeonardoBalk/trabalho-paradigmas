@@ -164,7 +164,7 @@ main = do
 ```
 A estrutura condicional é semelhante, mas Haskell e Clojure tendem a ser mais concisos, utilizando funções como `even?` para simplificar as condições.
 
-## Laços
+## 5. Laços
 **C**
    ```c
    for (int i = 0; i < n; i++) {
