@@ -306,7 +306,7 @@ void contarCaracteres() {
     char str[100];
     printf("Digite uma string: ");
     scanf("%s", str);
-    printf("Número de caracteres: %lu\n", strlen(str));
+    printf("Numero de caracteres: %lu\n", strlen(str));
 }
 ```
 
@@ -329,7 +329,7 @@ contarCaracteres str = length str
     -   Em Clojure, a função `count` retorna a contagem diretamente, pois as strings são tratadas como sequências.
     -   Haskell utiliza `length`, que também opera em listas, já que strings são listas de caracteres.
 
-### 2. Função para contar Vogais em uma String
+### 2. Função para contar vogais em uma String
 
 **C**
 ```c
@@ -345,7 +345,7 @@ void contarVogais() {
             quantidade++;
         }
     }
-    printf("Número de vogais: %d\n", quantidade);
+    printf("Numero de vogais: %d\n", quantidade);
 }
 ```
 
@@ -367,7 +367,7 @@ contarVogais str = length (filter (`elem` "aeiouAEIOU") str)
     -   Clojure aplica `filter` e um conjunto literal para contar as vogais.
     -   Haskell faz uso de `filter` e `elem`, funções já mencionadas da programação funcional.
 
-### 3. Remover Ocorrências de um Caractere
+### 3. Função para remover ocorrências de um caractere
 
 **C**
 
@@ -408,14 +408,14 @@ removerOcorrencias c str = filter (/= c) str
     -   Clojure utiliza `remove` para criar uma nova sequência sem o caractere indesejado.
     -   Haskell faz uso de `filter`, que é mais conciso e idiomático.
 
-### 4. Contar Strings que Não Terminam com 's'
+### 4. Função para contar Strings que não terminam com 's'
 
 **C**
 
 ```c
 `void contarStringsSemS() {
     int n, quantidade = 0;
-    printf("Digite o número de strings: ");
+    printf("Digite o numero de strings: ");
     scanf("%d", &n);
     char strings[n][100];
     printf("Digite as strings:\n");
@@ -445,13 +445,13 @@ contarSemS xs = length (filter (\s -> last s /= 's') xs)
     -   C precisa lidar com arrays multidimensionais e o loop para capturar o número de strings.
     -   Clojure e Haskell têm funções embutidas para filtrar e contar.
 
-### 5. Soma de uma Lista de Números
+### 5. Função para somar de uma lista de números
 
 **C**
 ```c
 void somaLista() {
     int arr[100], n, soma = 0;
-    printf("Digite o número de elementos: ");
+    printf("Digite o numero de elementos: ");
     scanf("%d", &n);
     printf("Digite os elementos:\n");
     for (int i = 0; i < n; i++) {
@@ -480,7 +480,7 @@ somaLista xs = sum xs
     -   A soma em C requer um loop explícito.
     -   Clojure e Haskell oferecem funções nativas para a operação de soma.
 
-### 6. Calcular Média de uma Lista de Números
+### 6. Função para calcular média de uma lista de números
 
 **C**
 
@@ -488,10 +488,10 @@ somaLista xs = sum xs
 void calcularMediaLista() {
     int n;
     float soma = 0.0;
-    printf("Digite o número de elementos: ");
+    printf("Digite o numero de elementos: ");
     scanf("%d", &n);
     if (n <= 0) {
-        printf("Número de elementos deve ser maior que zero.\n");
+        printf("Numero de elementos deve ser maior que zero.\n");
         return;
     }
     float arr[n];
@@ -500,7 +500,7 @@ void calcularMediaLista() {
         scanf("%f", &arr[i]);
         soma += arr[i];
     }
-    printf("Média da lista: %.2f\n", soma / n);
+    printf("Media da lista: %.2f\n", soma / n);
 }
 ```
 
@@ -521,13 +521,13 @@ mediaLista xs = sum xs / fromIntegral (length xs)
     -   O C exige checagem manual de divisão por zero.
     -   Clojure e Haskell têm formas mais idiomáticas de calcular a média, embora Haskell precise converter o tamanho da lista para um tipo compatível.
 
-### 7. Inverter uma Lista de Inteiros
+### 7. Função para inverter uma lista de inteiros
 
 **C**
 ```c
 void inverterLista() {
     int n;
-    printf("Digite o número de elementos: ");
+    printf("Digite o numero de elementos: ");
     scanf("%d", &n);
     int arr[n];
     printf("Digite os elementos:\n");
@@ -558,21 +558,21 @@ inverterLista xs = reverse xs
     -   O C usa um loop manual para imprimir os elementos na ordem inversa.
     -   Clojure e Haskell utilizam `reverse`, que é uma função embutida.
 
-### 8. Calcular Áreas de Círculos
+### 8. Função para calcular áreas de círculos
 
 **C**
 ```c
 void calcAreas() {
     int n;
-    printf("Digite o número de raios que serão calculados: ");
+    printf("Digite o numero de raios que serao calculados: ");
     scanf("%d", &n);
     float raios[n], areas[n];
     printf("Digite os raios:\n");
     for (int i = 0; i < n; i++) {
         scanf("%f", &raios[i]);
-        areas[i] = M_PI * raios[i] * raios[i]; // Cálculo da área
+        areas[i] = M_PI * raios[i] * raios[i]; // calculo da area
     }
-    printf("Áreas dos círculos:\n");
+    printf("Areas dos circulos:\n");
     for (int i = 0; i < n; i++) {
         printf("%.2f\n", areas[i]);
     }
@@ -596,7 +596,7 @@ calcAreas raios = map (\r -> pi * r * r) raios
     -   Clojure e Haskell utilizam `map` para aplicar a função de área a cada raio de forma mais concisa.
 
 
-### 9. Função que Inverte uma String
+### 9. Função para inverter uma String
 
 #### C
 ```c
@@ -636,7 +636,7 @@ inverterString str = reverse str
     -   O C usa um loop manual para imprimir os elementos na ordem inversa.
     -   Clojure e Haskell utilizam `reverse`, que é uma função built-in.
 
-### 10. Função que Faz uma Calculadora Simples
+### 10. Calculadora Simples
 
 #### C
 
@@ -646,9 +646,9 @@ clojurevoid calculadora() {
     int operacao;
     float num1, num2;
 
-    printf("1. Somar\n2. Subtrair\n3. Multiplicar\n4. Dividir\nDigite a operação: ");
+    printf("1. Somar\n2. Subtrair\n3. Multiplicar\n4. Dividir\nDigite a operacao: ");
     scanf("%d", &operacao);
-    printf("Digite dois números: ");
+    printf("Digite dois numeros: ");
     scanf("%f %f", &num1, &num2);
 
     switch (operacao) {
@@ -665,11 +665,11 @@ clojurevoid calculadora() {
             if (num2 != 0) {
                 printf("Resultado: %.2f\n", num1 / num2);
             } else {
-                printf("Não pode dividir por zero\n");
+                printf("Nao pode dividir por zero\n");
             }
             break;
         default:
-            printf("Operação não existe\n");
+            printf("Operacao nao existe\n");
             break;
     }
 }
@@ -681,8 +681,8 @@ calculadora x y op
   | op == "somar"       = x + y
   | op == "subtrair"    = x - y
   | op == "multiplicar"  = x * y
-  | op == "dividir"     = if y /= 0 then x / y else error "Não pode dividir por zero"
-  | otherwise           = error "Operação inválida"
+  | op == "dividir"     = if y /= 0 then x / y else error "Nao pode dividir por zero"
+  | otherwise           = error "Operacao invalida"
   ```
 
  
