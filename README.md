@@ -7,6 +7,55 @@ A proposta da minha produção personalizada foi fazer uma comparação entre as
 
 ![linguagens](https://github.com/user-attachments/assets/a1c364a3-2096-485a-9477-d67e5d02725c)
 
+# As linguagens
+
+## C
+
+### Histórico e Popularidade
+Desenvolvida na década de 1970, C se tornou uma das linguagens mais influentes na programação moderna. É amplamente utilizada em diversos setores, desde desenvolvimento de sistemas operacionais até software embarcado.
+
+### Eficiência e Desempenho
+C oferece controle de baixo nível sobre a memória, permitindo otimizações que resultam em desempenho superior. Isso a torna ideal para aplicativos que exigem alta eficiência, como jogos e sistemas em tempo real.
+
+### Conceitos Fundamentais
+Quem usa C é introduzido a conceitos essenciais como manipulação de ponteiros, alocação dinâmica de memória e estruturas de dados, que são fundamentais para entender o funcionamento interno do computador.
+
+### Portabilidade
+O código escrito em C pode ser compilado em diversas plataformas, garantindo que programas desenvolvidos em C possam ser executados em diferentes sistemas operacionais com mínima alteração.
+
+---
+
+## Haskell
+
+### Paradigma Funcional
+Haskell é uma linguagem puramente funcional, o que significa que a ênfase está na aplicação de funções e na imutabilidade dos dados. Essa abordagem leva a um estilo de programação diferente, focado em expressões e funções em vez de estados mutáveis.
+
+### Sistema de Tipos
+Haskell possui um sistema de tipos forte e estático, que ajuda a evitar erros em tempo de execução e permite a verificação de tipos durante a compilação, promovendo a segurança do código.
+
+### Avaliação Preguiçosa
+A avaliação preguiçosa permite que expressões sejam avaliadas somente quando necessário, otimizando o uso de memória e aumentando a eficiência do programa. Isso possibilita a construção de algoritmos complexos de maneira mais intuitiva.
+
+### Funções de Ordem Superior
+A linguagem suporta funções que podem receber outras funções como argumentos ou retornar funções como resultado. Isso permite uma maior modularidade e reusabilidade do código, facilitando a composição de funções.
+
+---
+
+## Clojure
+
+### Paradigma Funcional e Concorrência
+Clojure combina a programação funcional com recursos que facilitam a concorrência, permitindo que múltiplas operações sejam executadas simultaneamente de maneira segura e eficiente. A imutabilidade dos dados é um dos princípios centrais que ajuda a evitar condições de corrida.
+
+### Sintaxe Concisa
+A sintaxe de Clojure é baseada em Lisp, o que a torna muito concisa e expressiva. Essa simplicidade permite que os desenvolvedores escrevam menos código, reduzindo a possibilidade de erros.
+
+### Integração com Java
+Clojure é executada na JVM (Java Virtual Machine), permitindo que os desenvolvedores aproveitem as bibliotecas e frameworks do ecossistema Java. Isso torna Clojure uma escolha atraente para projetos que já utilizam Java.
+
+### Foco em Imutabilidade
+O design de Clojure enfatiza a imutabilidade dos dados, o que facilita a manutenção de estados consistentes em aplicações complexas. Esse foco é crucial para o desenvolvimento de sistemas robustos e escaláveis.
+
+
 # Contextualizando
 
 Nessa parte do arquivo, irei abordar um resumo do que será usado de cada linguagem para resolver as questões.
@@ -639,13 +688,87 @@ calculadora x y op
  
 #### Clojure
 
-```clojure
-(defn calculadora [x y op]
-  (cond
-    (= op "somar") (+ x y)
-    (= op "subtrair") (- x y)
-    (= op "multiplicar") (* x y)
-    (= op "dividir") (if (not= y 0) (/ x y) (throw (Exception. "Não pode dividir por zero")))
-    :else (throw (Exception. "Operação inválida"))))
-    ```
+
+-   **Diferenças:**
     
+	-  	 Essa é a que mais se assemelha, todas usam condições pra fazer a calculadora.
+    -   O C utiliza `switch` para controle  com números inteiros para determinar as operações.
+    -   Haskell e Clojure usam condicionais baseadas em strings.
+    - Basicamente é o mesmo código, porém acaba sendo menos complexo e mais curto em Haskell e Clojure.
+
+## Conclusão
+### Conclusão da Comparação entre Implementações em C, Haskell e Clojure
+
+Ao longo da análise das implementações das funções em C, Haskell e Clojure, percebe-se que cada linguagem tem suas particularidades que afetam diretamente a complexidade, a imutabilidade e a forma como manipulamos os parâmetros.
+
+1.  **Complexidade**:
+    
+    -   As soluções em **C** tendem a ser mais complexas. Por ser uma linguagem de baixo nível, requeremos um controle manual detalhado sobre a manipulação de strings e buffers, o que pode tornar o código mais extenso e difícil de entender. Por outro lado, em **Haskell** e **Clojure**, as funções são mais diretas e concisas, utilizando funções embutidas que facilitam as operações, tornando o código mais legível.
+2.  **Imutabilidade**:
+    
+    -   Outro ponto interessante é a imutabilidade das strings em Haskell e Clojure. Nestas linguagens, uma vez que uma string é criada, ela não pode ser alterada, o que traz segurança e evita efeitos colaterais inesperados. Em C, utilizamos arrays mutáveis, permitindo modificações diretas, mas isso pode levar a erros se não tivermos cuidado, especialmente para nós, que estamos ainda aprendendo a programar.
+3.  **Parâmetros**:
+    
+    -   Em relação à manipulação de parâmetros, Haskell e Clojure se destacam ao permitir que as funções aceitem strings e caracteres como argumentos, tornando o código mais modular e reutilizável. Já no C, frequentemente precisamos ler a entrada diretamente do usuário, o que limita a flexibilidade e a possibilidade de reuso do código em diferentes partes de um projeto.
+4.  **Facilidade de Manutenção**:
+    
+    -   Devido à simplicidade e clareza das implementações em Haskell e Clojure, é mais fácil manter e entender o código.  A complexidade do C pode dificultar a manutenção, especialmente para programadores que ainda estão no início da carreira, como eu.
+
+### Considerações Finais
+
+Ao considerar qual linguagem utilizar, é importante levar em conta não apenas a tarefa em si, mas também o contexto do projeto. Para aplicações que exigem um controle mais fino e eficiência, o C pode ser mais adequado. No entanto, se o objetivo é desenvolver algo rapidamente e que seja fácil de manter, Haskell e Clojure oferecem vantagens claras. A forma como essas linguagens lidam com a imutabilidade e as abstrações de alto nível realmente tornam a programação muito mais intuitiva.
+
+## Extra
+Esse trabalho foi realizado porque achei interessante aprender uma linguagem usado pelo banco Nubank, a linguagem Clojure tem uma forte ligação com o banco. Durante a realização do mesmo, estive pensando: **O Nubank poderia usar Haskell ao invés de Clojure?**
+
+Para responder essa pergunta precisamos saber como o Nubank utiliza a linguagem. Vamos lá!
+
+# Clojure e Nubank
+
+O Nubank, como sabemos, se destaca como uma das principais empresas da América Latina, reconhecida por sua inovação na forma como lidamos com serviços financeiros. Uma das linguagens de programação fundamentais para o Nubank é o Clojure. 
+
+## Como o Nubank Usa Clojure?
+
+1. **Desenvolvimento de Backend**: O Clojure é amplamente utilizado no desenvolvimento do backend dos serviços do Nubank. Sua capacidade de gerenciar múltiplas requisições simultâneas permite que a empresa ofereça uma experiência de usuário eficiente e responsiva.
+
+2. **Microserviços**: O Nubank adota uma arquitetura baseada em microserviços, e o Clojure se encaixa perfeitamente nesse modelo. Essa abordagem permite que os serviços sejam desenvolvidos, implementados e escalados de forma independente, proporcionando agilidade no lançamento de novas funcionalidades.
+
+3. **Processamento de Dados**: Clojure é empregada para análise e processamento de dados, especialmente em tarefas que envolvem grandes volumes de informações financeiras. A linguagem facilita a implementação de algoritmos complexos de maneira concisa, essencial para a tomada de decisões baseada em dados.
+
+4. **Integração com Sistemas Legados**: A interoperabilidade de Clojure com bibliotecas Java é uma vantagem significativa para o Nubank, que precisa conectar novos serviços a sistemas mais antigos. Isso permite que a equipe aproveite as robustas bibliotecas existentes, integrando novas soluções de maneira eficaz.
+
+5. **Desenvolvimento Rápido**: A sintaxe expressiva e concisa de Clojure possibilita que a equipe desenvolva e implemente novas funcionalidades de forma rápida. Isso é crucial em um setor financeiro dinâmico, onde a inovação e a adaptação rápida são fundamentais.
+
+## Vantagens de Usar Clojure
+
+- **Redução de Erros**: A imutabilidade dos dados em Clojure ajuda a minimizar muitos erros comuns associados a sistemas concorrentes, resultando em uma base de código mais confiável.
+
+- **Colaboração e Compartilhamento de Conhecimento**: A comunidade de Clojure é bastante colaborativa, e o Nubank se beneficia dessa troca de experiências e práticas recomendadas, permitindo que a equipe se mantenha atualizada.
+
+- **Performance**: Clojure, por rodar na JVM, permite que o Nubank aproveite as otimizações dessa máquina virtual, o que é essencial para garantir a performance do sistema.
+
+## Então... Haskell poderia ser usado em vez de Clojure no Nubank?
+
+Vamos analisar alguns pontos:
+
+1. **Concorrência e Imutabilidade**: Embora Haskell também ofereça excelentes recursos de concorrência, sua abordagem é diferente. Clojure proporciona um modelo de concorrência mais acessível, enquanto Haskell pode exigir um entendimento mais profundo, o que poderia tornar a implementação mais desafiadora.
+
+2. **Ecossistema e Ferramentas**: Clojure, por rodar na JVM, possui acesso a uma vasta gama de bibliotecas Java. Em contraste, Haskell, apesar de ter suas próprias bibliotecas, não possui a mesma profundidade de integração com o ecossistema Java, o que poderia limitar sua aplicabilidade no Nubank.
+
+3. **Curva de Aprendizado**: Haskell é conhecida por ter uma curva de aprendizado mais acentuada devido ao seu sistema de tipos e à sua natureza puramente funcional. Para uma equipe que já utiliza Clojure, a transição para Haskell poderia representar um desafio significativo em termos de tempo e recursos.
+
+4. **Objetivos e Prioridades de Negócio**: As prioridades e estratégias do Nubank também influenciam a escolha da linguagem. Clojure se alinha bem com a necessidade de desenvolvimento rápido e flexível, enquanto Haskell, embora ofereça robustez, pode não atender tão rapidamente às exigências do mercado.
+
+**Em resumo**, Haskell é uma boa linguagens, mas a escolha do Nubank por Clojure se baseia em uma combinação de fatores técnicos e de negócios que a tornam mais adequada para suas necessidades. 
+
+**Respondendo a pergunta:** Embora Haskell pudesse ser utilizado, sua adoção implicaria desafios que poderiam impactar a eficiência e agilidade do desenvolvimento, tornando Clojure a opção preferida no contexto do Nubank.
+
+## Fontes
+https://www.linkedin.com/advice/1/how-do-you-choose-use-right-clojure-libraries?lang=pt&originalSubdomain=pt
+https://pt.wikibooks.org/wiki/Haskell/M%C3%B3dulos
+https://embarcados.com.br/linguagem-c-guia-completo/
+https://blog.nubank.com.br/o-que-e-clojure/
+https://blog.nubank.com.br/programacao-funcional-o-que-e-relacao-nubank/
+https://learnxinyminutes.com/docs/pt-br/clojure-pt/
+https://haskell.tailorfontela.com.br
+Ferramentas de IA
